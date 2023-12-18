@@ -53,9 +53,8 @@ To install Django on your system, you'll need to have Python installed first, as
 
    This should display the installed Django version.
 
-That's it! You now have Django installed on your system. You can start creating Django projects and applications and begin your web development journey.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Django History......!
 
