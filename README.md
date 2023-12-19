@@ -152,7 +152,7 @@ pip install django
 
 ### Step 2: Create a Django Project
 
-Run the following command to create a new Django project. Replace `myproject` with the desired project name.
+Run the following command to create a new Django project. Replace `projectname` with the desired project name.
 
 ```bash
 django-admin startproject projectname
@@ -176,7 +176,7 @@ python manage.py startapp appname
 
 ### Step 5: Define Models
 
-In `myapp/models.py`, define the data models for your application. For example:
+In `appname/models.py`, define the data models for your application. For example:
 
 ```python
 from django.db import models
@@ -200,7 +200,7 @@ python manage.py migrate
 
 ### Step 7: Create an Admin Panel
 
-In `myapp/admin.py`, register your models to make them accessible in the Django admin panel:
+In `appname/admin.py`, register your models to make them accessible in the Django admin panel:
 
 ```python
 from django.contrib import admin
@@ -211,7 +211,7 @@ admin.site.register(Item)
 
 ### Step 8: Create Views
 
-In `myapp/views.py`, define views for your app. For example:
+In `appname/views.py`, define views for your app. For example:
 
 ```python
 from django.shortcuts import render
@@ -228,7 +228,7 @@ Create a `templates` folder in your app directory. Inside it, create an `index.h
 
 ### Step 10: Configure URLs
 
-In `myapp/urls.py`, define the URL patterns for your views:
+In `appname/urls.py`, define the URL patterns for your views:
 
 ```python
 from django.urls import path
@@ -239,7 +239,7 @@ urlpatterns = [
 ]
 ```
 
-In `myproject/urls.py`, include the app's URLs:
+In `projectname/urls.py`, include the app's URLs:
 
 ```python
 from django.contrib import admin
