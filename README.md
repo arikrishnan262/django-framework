@@ -139,3 +139,125 @@ Django's history is characterized by a series of releases and updates, with each
     - Django continues to evolve with regular releases, addressing security issues, introducing new features, and ensuring compatibility with the latest versions of Python.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to create simple project in Django?
+
+### Step 1: Install Django
+
+Before you start, make sure you have Python installed. You can then install Django using the following command:
+
+```bash
+pip install django
+```
+
+### Step 2: Create a Django Project
+
+Run the following command to create a new Django project. Replace `myproject` with the desired project name.
+
+```bash
+django-admin startproject myproject
+```
+
+### Step 3: Navigate to Project Directory
+
+Move into the project directory:
+
+```bash
+cd myproject
+```
+
+### Step 4: Create a Django App
+
+Django projects are organized into apps. Create a new app using the following command:
+
+```bash
+python manage.py startapp myapp
+```
+
+### Step 5: Define Models
+
+In `myapp/models.py`, define the data models for your application. For example:
+
+```python
+from django.db import models
+
+class Item(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+```
+
+### Step 6: Make Migrations
+
+Run the following commands to create database migrations based on your models:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### Step 7: Create an Admin Panel
+
+In `myapp/admin.py`, register your models to make them accessible in the Django admin panel:
+
+```python
+from django.contrib import admin
+from .models import Item
+
+admin.site.register(Item)
+```
+
+### Step 8: Create Views
+
+In `myapp/views.py`, define views for your app. For example:
+
+```python
+from django.shortcuts import render
+from .models import Item
+
+def index(request):
+    items = Item.objects.all()
+    return render(request, 'myapp/index.html', {'items': items})
+```
+
+### Step 9: Create Templates
+
+Create a `templates` folder in your app directory. Inside it, create an `index.html` file with the HTML template for your view.
+
+### Step 10: Configure URLs
+
+In `myapp/urls.py`, define the URL patterns for your views:
+
+```python
+from django.urls import path
+from .views import index
+
+urlpatterns = [
+    path('', index, name='index'),
+]
+```
+
+In `myproject/urls.py`, include the app's URLs:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('myapp.urls')),
+]
+```
+
+### Step 11: Run the Development Server
+
+Start the development server with the following command:
+
+```bash
+python manage.py runserver
+```
+
+Visit `http://127.0.0.1:8000/` in your browser to see your Django app in action.
+
