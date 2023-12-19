@@ -155,7 +155,7 @@ pip install django
 Run the following command to create a new Django project. Replace `myproject` with the desired project name.
 
 ```bash
-django-admin startproject myproject
+django-admin startproject projectname
 ```
 
 ### Step 3: Navigate to Project Directory
@@ -163,7 +163,7 @@ django-admin startproject myproject
 Move into the project directory:
 
 ```bash
-cd myproject
+cd projectname
 ```
 
 ### Step 4: Create a Django App
@@ -171,7 +171,7 @@ cd myproject
 Django projects are organized into apps. Create a new app using the following command:
 
 ```bash
-python manage.py startapp myapp
+python manage.py startapp appname
 ```
 
 ### Step 5: Define Models
